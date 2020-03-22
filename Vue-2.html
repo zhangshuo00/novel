@@ -1,0 +1,371 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TodoList实例 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Vue-3路由.html" />
+    
+    
+    <link rel="prev" href="Vue-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Vue-1.html">
+            
+                <a href="Vue-1.html">
+            
+                    
+                    Vue_1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="Vue-2.html">
+            
+                <a href="Vue-2.html">
+            
+                    
+                    TodoList实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Vue-3路由.html">
+            
+                <a href="Vue-3路由.html">
+            
+                    
+                    Vue-路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="闭包.html">
+            
+                <a href="闭包.html">
+            
+                    
+                    闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="跨域.html">
+            
+                <a href="跨域.html">
+            
+                    
+                    跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >TodoList实例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="todolist-&#x5B9E;&#x4F8B;">ToDoList &#x5B9E;&#x4F8B;</h1>
+<h3 id="1-&#x8F93;&#x5165;&#x4E8B;&#x9879;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x5728;&#x72B6;&#x6001;&#x4E2D;">1. &#x8F93;&#x5165;&#x4E8B;&#x9879;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x5728;&#x72B6;&#x6001;&#x4E2D;</h3>
+<p>&#x4F7F;&#x7528; v-model &#x521B;&#x5EFA;&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#xFF1B;
+v-on:keyup &#x76D1;&#x542C;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x6309;&#x952E;&#x4FEE;&#x9970;&#x7B26; .enter&#xFF1B;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;todo&quot;</span> @<span class="hljs-attr">keyup.enter</span>=<span class="hljs-string">&quot;addTodo&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&#x6DFB;&#x52A0;&#x5F85;&#x529E;&#x4E8B;&#x9879;&quot;</span>&gt;</span>
+</code></pre>
+<h3 id="2-&#x4F7F;&#x7528;-v-for-&#x5FAA;&#x73AF;&#x6E32;&#x67D3;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;-v-if-&#x5224;&#x65AD;&#x662F;&#x5426;&#x6E32;&#x67D3;">2. &#x4F7F;&#x7528; v-for &#x5FAA;&#x73AF;&#x6E32;&#x67D3;&#xFF0C;&#x5E76;&#x901A;&#x8FC7; v-if &#x5224;&#x65AD;&#x662F;&#x5426;&#x6E32;&#x67D3;</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item,idx) in todoList&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;idx&quot;</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;item.done === false&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{item.todo}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+</code></pre>
+<p>&#x4E0D;&#x5141;&#x8BB8; v-if &#x548C; v-for &#x5728;&#x540C;&#x4E00;&#x5143;&#x7D20;&#x5185;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5916;&#x5C42;&#x5305;&#x88F9; template&#xFF0C;v-for &#x5199;&#x5728;template&#x4E0A;&#xFF0C;v-if &#x7ED1;&#x5B9A;&#x5728;&#x9700;&#x8981;&#x5FAA;&#x73AF;&#x7684;&#x5143;&#x7D20;&#x4E0A;&#x3002;</p>
+<h3 id="3-&#x5207;&#x6362;&#x72B6;&#x6001;&#x548C;&#x5220;&#x9664;">3. &#x5207;&#x6362;&#x72B6;&#x6001;&#x548C;&#x5220;&#x9664;</h3>
+<p>&#x5C06;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x51FD;&#x6570;&#x5199;&#x5728; methods &#x5C5E;&#x6027;&#x4E2D;</p>
+<pre><code class="lang-javascript">changeTodo(idx,done){
+    <span class="hljs-keyword">if</span>(done){<span class="hljs-comment">//&#x6807;&#x8BB0;&#x4E3A;&#x5DF2;&#x5B8C;&#x6210;&#x4E8B;&#x9879;</span>
+        <span class="hljs-keyword">this</span>.todoNum--
+        <span class="hljs-keyword">this</span>.todoList[idx].done = <span class="hljs-literal">true</span>
+    }<span class="hljs-keyword">else</span>{<span class="hljs-comment">//&#x5426;&#x5219;&#x6807;&#x8BB0;&#x4E3A;&#x672A;&#x5B8C;&#x6210;</span>
+        <span class="hljs-keyword">this</span>.todoNum++
+        <span class="hljs-keyword">this</span>.todoList[idx].done = <span class="hljs-literal">false</span>
+    }
+},
+delTodo(idx,done){
+    <span class="hljs-keyword">if</span>(done){
+        <span class="hljs-keyword">this</span>.todoNum--
+    }
+    <span class="hljs-keyword">this</span>.todoList.splice(idx,<span class="hljs-number">1</span>)<span class="hljs-comment">//&#x4ECE;&#x5F85;&#x529E;&#x6570;&#x7EC4;&#x4E2D;&#x5220;&#x9664;&#x8BE5;&#x9879;</span>
+}
+</code></pre>
+<p>&#x4E3A;&#x5F85;&#x529E;&#x4E8B;&#x9879;&#x7684;&#x590D;&#x9009;&#x6846;&#x6DFB;&#x52A0; change &#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x7ED1;&#x5B9A; changeTodo &#x51FD;&#x6570;</p>
+<pre><code>&lt;input type=&quot;checkbox&quot; @change=&quot;changeTodo(idx,true)&quot;&gt;
+</code></pre><h3 id="4-&#x4F7F;&#x7528;-localstorage-&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF0C;&#x4F7F;&#x5F97;&#x5237;&#x65B0;&#x9875;&#x9762;&#x540E;&#x6570;&#x636E;&#x4ECD;&#x5B58;&#x5728;">4. &#x4F7F;&#x7528; LocalStorage &#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF0C;&#x4F7F;&#x5F97;&#x5237;&#x65B0;&#x9875;&#x9762;&#x540E;&#x6570;&#x636E;&#x4ECD;&#x5B58;&#x5728;</h3>
+<p>LocalStorage &#x5B58;&#x50A8;&#x7684;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x683C;&#x5F0F;&#xFF0C;getItem &#x548C; setItem &#x65F6;&#x9700;&#x8981;&#x4F7F;&#x7528;JSON.parse &#x548C; stringify &#x8F6C;&#x6362;&#x683C;&#x5F0F;&#xFF1B;
+&#x5C06; getItem&#x3001;setItem &#x5C01;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5E76;&#x5BFC;&#x51FA;&#xFF1B;
+&#x5728; todolist.vue &#x4E2D;&#x4F7F;&#x7528;<code>import * as Utils from &apos;&apos;</code>&#x5F15;&#x5165;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1B;
+&#x6216;&#x8005;&#x4F7F;&#x7528;<code>import {getItem,setItem} from &apos;&apos;</code>&#x7C7B;&#x4F3C;es6&#x7684;&#x89E3;&#x6784;&#xFF1B;</p>
+<h3 id="5-&#x6570;&#x636E;&#x7684;&#x521D;&#x59CB;&#x5316;&#x53CA;&#x751F;&#x547D;&#x5468;&#x671F;&#x51FD;&#x6570;">5. &#x6570;&#x636E;&#x7684;&#x521D;&#x59CB;&#x5316;&#x53CA;&#x751F;&#x547D;&#x5468;&#x671F;&#x51FD;&#x6570;</h3>
+<pre><code>initTodo(){ //&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#xFF0C;&#x4ECE; localstorage&#x4E2D;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x5199;&#x5165; data&#x4E2D;
+    var todoArr = Utils.getItem(&apos;todoList&apos;)
+    if(todoArr){
+        for(let i=0;i&lt;todoArr.length;i++){
+            if(todoArr[i].done === false){
+                this.todoNum++
+            }
+        }
+        this.todoList = todoArr
+    }
+}
+</code></pre><p>&#x5728;&#x751F;&#x547D;&#x5468;&#x671F;&#x51FD;&#x6570; created() &#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x4FEE;&#x6539;&#x4E3A; mounted() &#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x6210;&#x529F;&#x521D;&#x59CB;&#x5316;&#xFF1B;
+<strong>&#x5173;&#x4E8E;&#x751F;&#x547D;&#x5468;&#x671F;&#x51FD;&#x6570;&#x8FD8;&#x4E0D;&#x592A;&#x6E05;&#x695A;&#xFF0C;&#x4F1A;&#x7EE7;&#x7EED;&#x5B66;&#x4E60;</strong></p>
+<h3 id="6-&#x5173;&#x4E8E;&#x8DEF;&#x7531;">6. &#x5173;&#x4E8E;&#x8DEF;&#x7531;</h3>
+<p><strong>index.js</strong> &#x4E2D;&#x8DEF;&#x7531;&#x7684;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> Router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue-router&apos;</span>
+<span class="hljs-keyword">import</span> Todolist <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@/components/Todolist&apos;</span><span class="hljs-comment">// &#x5F15;&#x5165;&#x7EC4;&#x4EF6;</span>
+Vue.use(Router)
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> Router({<span class="hljs-comment">//&#x521B;&#x5EFA;&#x8DEF;&#x7531;&#x5BF9;&#x8C61;</span>
+  routes: [<span class="hljs-comment">//&#x5305;&#x542B;&#x591A;&#x4E2A;&#x8DEF;&#x7531;&#x7684;&#x8DEF;&#x5F84;&#x3001;&#x5F15;&#x5165;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;react&#x4E2D;Route&#x7684;path&#x548C;component</span>
+    {
+      path: <span class="hljs-string">&apos;/&apos;</span>,
+      name: <span class="hljs-string">&apos;todolist&apos;</span>,
+      component: Todolist
+    }
+  ]
+})
+</code></pre>
+<p><strong>App.vue</strong> &#x4E2D;&#x7684;<code>&lt;router-view/&gt;</code></p>
+<h3 id="7-&#x6253;&#x5305;">7. &#x6253;&#x5305;</h3>
+<p>&#x4FEE;&#x6539; config/index.js &#x4E2D;&#x7684; <strong>assetsPublicPath: &apos;./&apos;</strong>&#xFF1B;</p>
+<p>&#x6267;&#x884C; <strong>npm run build</strong> &#xFF0C;&#x6253;&#x5305;&#x5B8C;&#x6210;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x5728; dist&#x6587;&#x4EF6;&#x5939;&#x5185;&#xFF1B;</p>
+<p>&#x4FEE;&#x6539; index.html &#x4E2D;&#x5F15;&#x5165;&#x7684; js&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;<strong>./static/xxxxxxx</strong></p>
+<h3 id="8-&#x901A;&#x8FC7;-github&#x53D1;&#x5E03;">8. &#x901A;&#x8FC7; GitHub&#x53D1;&#x5E03;</h3>
+<p><a href="https://zhangshuo00.github.io/vue-test/one/dist/index.html" target="_blank">https://zhangshuo00.github.io/vue-test/one/dist/index.html</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Vue-1.html" class="navigation navigation-prev " aria-label="Previous page: Vue_1">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Vue-3路由.html" class="navigation navigation-next " aria-label="Next page: Vue-路由">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TodoList实例","level":"1.3","depth":1,"next":{"title":"Vue-路由","level":"1.4","depth":1,"path":"Vue-3路由.md","ref":"Vue-3路由.md","articles":[]},"previous":{"title":"Vue_1","level":"1.2","depth":1,"path":"Vue-1.md","ref":"Vue-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue-2.md","mtime":"2020-03-22T15:38:31.283Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-22T15:39:15.795Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

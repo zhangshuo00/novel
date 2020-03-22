@@ -1,0 +1,23 @@
+{
+  "name": "novel",
+  "version": "1.0.0",
+  "description": "这是一个GitBook 自动化构建的 Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangshuo00/novel.git"
+  },
+  "keywords": [],
+  "author": "zhangshuo00",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhangshuo00/novel/issues"
+  },
+  "homepage": "https://github.com/zhangshuo00/novel#readme",
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}

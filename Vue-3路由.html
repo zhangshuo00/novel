@@ -1,0 +1,364 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue-路由 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="闭包.html" />
+    
+    
+    <link rel="prev" href="Vue-2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Vue-1.html">
+            
+                <a href="Vue-1.html">
+            
+                    
+                    Vue_1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Vue-2.html">
+            
+                <a href="Vue-2.html">
+            
+                    
+                    TodoList实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="Vue-3路由.html">
+            
+                <a href="Vue-3路由.html">
+            
+                    
+                    Vue-路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="闭包.html">
+            
+                <a href="闭包.html">
+            
+                    
+                    闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="跨域.html">
+            
+                <a href="跨域.html">
+            
+                    
+                    跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Vue-路由</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vue-&#x8DEF;&#x7531;">Vue &#x8DEF;&#x7531;</h1>
+<p><strong>&#x4F7F;&#x7528; Vue + Vue Router &#x521B;&#x5EFA;&#x5355;&#x9875;&#x5E94;&#x7528;</strong></p>
+<ol>
+<li><p>&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x7EC4;&#x4EF6;</p>
+</li>
+<li><p>&#x5B9A;&#x4E49;&#x8DEF;&#x7531;<strong>./router/index.js</strong>&#xFF0C;&#x914D;&#x7F6E;&#x8DEF;&#x5F84;&#xFF0C;&#x5E76;&#x5C06;&#x7EC4;&#x4EF6;&#x6620;&#x5C04;&#x5230;&#x8DEF;&#x7531;&#x4E0A;&#xFF0C;&#x7136;&#x540E;&#x521B;&#x5EFA;router&#x5B9E;&#x4F8B;
+```javascript
+Vue.use(Router)</p>
+</li>
+</ol>
+<p>export default new Router({
+  routes: [
+    {path: &apos;/&apos;,name: &apos;Home&apos;,component: Home},
+    {path:&apos;/pins&apos;,name:&apos;Pins&apos;,component:Pins},
+    {path:&apos;/topics&apos;,name:&apos;Topics&apos;,component:Topics},
+    {path:&apos;/books&apos;,name:&apos;Books&apos;,component:Books},
+    {path:&apos;/events&apos;,name:&apos;Events&apos;,component:Events}
+  ],
+  mode:&apos;history&apos;
+})</p>
+<pre><code>3. &#x521B;&#x5EFA;&#x548C;&#x6302;&#x8F7D;&#x8DDF;&#x5B9E;&#x4F8B;
+```javascript
+import Vue from &apos;vue&apos;
+import App from &apos;./App&apos;
+import router from &apos;./router&apos;
+
+Vue.config.productionTip = false
+
+new Vue({
+  el: &apos;#app&apos;,
+  router,
+  components: { App },
+  template: &apos;&lt;App/&gt;&apos;
+})
+</code></pre><p><strong>Nav.vue</strong></p>
+<pre><code class="lang-javascript">&lt;!-- &#x4F7F;&#x7528; router-link &#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x7EC4;&#x4EF6;&#x6620;&#x5C04;&#x5230;&#x8DEF;&#x7531; --&gt;
+&lt;!-- &#x901A;&#x8FC7; to&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x94FE;&#x63A5; --&gt;
+&lt;router-link to=&quot;/&quot; exact&gt;&#x9996;&#x9875;&lt;/router-link&gt;
+&lt;router-link to=&quot;/pins&quot; exact&gt;&#x6CB8;&#x70B9;&lt;/router-link&gt;
+&lt;router-link to=&quot;/topics&quot; exact&gt;&#x8BDD;&#x9898;&lt;/router-link&gt;
+&lt;router-link to=&quot;/books&quot; exact&gt;&#x5C0F;&#x518C;&lt;/router-link&gt;
+&lt;router-link to=&quot;/events&quot; exact&gt;&#x6D3B;&#x52A8;&lt;/router-link&gt;
+</code></pre>
+<p><strong>App.vue</strong></p>
+<pre><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;pagenav&gt;&lt;/pagenav&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre><p><strong>router-link</strong>&#x7C7B;&#x4F3C;&#x4E8E;react&#x4E2D;&#x7684;<code>&lt;Link&gt;</code>&#x7EC4;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7; to&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x5230;&#x76EE;&#x6807;&#x8DEF;&#x7531;&#xFF0C;&#x6DFB;&#x52A0;<code>exact</code>&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x7CBE;&#x51C6;&#x5339;&#x914D;&#x8DEF;&#x5F84;&#xFF1B;
+<strong>router-view</strong>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#xFF0C;&#x7528;&#x6765;&#x5C55;&#x793A;&#x591A;&#x4E2A;&#x89C6;&#x56FE;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5D4C;&#x5957;&#x5C55;&#x793A;&#x3002;</p>
+<pre><code class="lang-javascript">&lt;router-view <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;view one&quot;</span>&gt;&lt;/router-view&gt;
+&lt;router-view class=&quot;view two&quot; name=&quot;a&quot;&gt;&lt;/router-view&gt;
+&lt;router-view class=&quot;view three&quot; name=&quot;b&quot;&gt;&lt;/router-view&gt;
+
+const router = new VueRouter({
+  routes: [
+    {
+      path: &apos;/&apos;,
+      components: {
+        default: Foo,
+        a: Bar,
+        b: Baz
+      }
+    }
+  ]
+})
+</code></pre>
+<h4 id="&#x52A8;&#x6001;&#x8DEF;&#x7531;&#x5339;&#x914D;">&#x52A8;&#x6001;&#x8DEF;&#x7531;&#x5339;&#x914D;</h4>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Vue-2.html" class="navigation navigation-prev " aria-label="Previous page: TodoList实例">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="闭包.html" class="navigation navigation-next " aria-label="Next page: 闭包">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue-路由","level":"1.4","depth":1,"next":{"title":"闭包","level":"1.5","depth":1,"path":"闭包.md","ref":"闭包.md","articles":[]},"previous":{"title":"TodoList实例","level":"1.3","depth":1,"path":"Vue-2.md","ref":"Vue-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue-3路由.md","mtime":"2020-03-22T15:38:31.283Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-22T15:39:15.795Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
